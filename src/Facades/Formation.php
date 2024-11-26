@@ -2,13 +2,19 @@
 
 namespace Amphibee\MariusApi\Facades;
 
+use Amphibee\MariusApi\DTO\FormationDTO;
+use Amphibee\MariusApi\Exceptions\MariusApiException;
 use Amphibee\MariusApi\Services\FormationService;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static array getFormationsByCampus(string $campusId)
+ * Facade for Formation API interactions.
  *
- * @see \Amphibee\MariusApi\Services\FormationService
+ * @method static FormationDTO[] getFormationsByCampus(string $campusId) Get formations for a specific campus
+ *
+ * @throws MariusApiException When API request fails or campus not found
+ *
+ * @see FormationService
  */
 class Formation extends Facade
 {

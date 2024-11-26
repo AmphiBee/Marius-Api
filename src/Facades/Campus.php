@@ -2,13 +2,19 @@
 
 namespace Amphibee\MariusApi\Facades;
 
+use Amphibee\MariusApi\DTO\CampusDTO;
+use Amphibee\MariusApi\Exceptions\MariusApiException;
 use Amphibee\MariusApi\Services\CampusService;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static array getCampuses()
+ * Facade for Campus API interactions.
  *
- * @see \Amphibee\MariusApi\Services\CampusService
+ * @method static CampusDTO[] getCampuses() Get list of all available campuses with their formations
+ *
+ * @throws MariusApiException When API request fails
+ *
+ * @see CampusService
  */
 class Campus extends Facade
 {

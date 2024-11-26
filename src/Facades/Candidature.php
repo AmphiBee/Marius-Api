@@ -2,11 +2,16 @@
 
 namespace Amphibee\MariusApi\Facades;
 
+use Amphibee\MariusApi\Exceptions\MariusApiException;
 use Amphibee\MariusApi\Services\CandidatureService;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static array submit(\Amphibee\MariusApi\DTO\CandidatureDTO $candidature)
+ * Facade for Application submission.
+ *
+ * @method static array{id_candidature: string} submit(CandidatureDTO $candidature) Submit a new application
+ *
+ * @throws MariusApiException When API request fails
  *
  * @see \Amphibee\MariusApi\Services\CandidatureService
  */

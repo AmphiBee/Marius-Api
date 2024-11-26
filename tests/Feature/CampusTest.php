@@ -1,6 +1,7 @@
 <?php
 
 use Amphibee\MariusApi\DTO\CampusDTO;
+use Amphibee\MariusApi\Exceptions\MariusApiException;
 use Amphibee\MariusApi\Services\CampusService;
 use Illuminate\Support\Facades\Http;
 
@@ -48,4 +49,4 @@ it('throws exception when API request fails', function (): void {
     ]);
 
     $this->service->getCampuses();
-})->throws(\Amphibee\MariusApi\Exceptions\MariusApiException::class);
+})->throws(MariusApiException::class);

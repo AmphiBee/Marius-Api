@@ -8,8 +8,15 @@ use Amphibee\MariusApi\Services\FormationService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Service Provider for Marius API integration.
+ * Handles service registration and configuration publishing.
+ */
 class MariusServiceProvider extends ServiceProvider
 {
+    /**
+     * Register API services and merge configuration.
+     */
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/marius.php', 'marius');
@@ -22,6 +29,11 @@ class MariusServiceProvider extends ServiceProvider
         $this->app->singleton(CandidatureService::class, fn (Application $app): \Amphibee\MariusApi\Services\CandidatureService => new CandidatureService($app['config']['marius']));
     }
 
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array<class-string>
+     */
     public function provides(): array
     {
         return [
@@ -31,6 +43,10 @@ class MariusServiceProvider extends ServiceProvider
         ];
     }
 
+    /**
+     * Bootstrap the package services.
+     * Publishes configuration file to the application.
+     */
     public function boot(): void
     {
         $this->publishes([

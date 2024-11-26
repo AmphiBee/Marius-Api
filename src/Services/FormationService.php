@@ -3,13 +3,21 @@
 namespace Amphibee\MariusApi\Services;
 
 use Amphibee\MariusApi\DTO\FormationDTO;
+use Amphibee\MariusApi\Exceptions\MariusApiException;
 
+/**
+ * Service for managing formation data.
+ * Handles retrieval of formations by campus from the Marius API.
+ */
 class FormationService extends AbstractApiService
 {
     /**
-     * @return FormationDTO[]
+     * Get all formations available for a specific campus.
      *
-     * @throws \Amphibee\MariusApi\Exceptions\MariusApiException
+     * @param  string  $campusId  The unique identifier of the campus
+     * @return FormationDTO[] Array of formations associated with the campus
+     *
+     * @throws MariusApiException When API request fails or campus not found
      */
     public function getFormationsByCampus(string $campusId): array
     {
@@ -17,7 +25,7 @@ class FormationService extends AbstractApiService
         $data = $response->json()['campus'][$campusId]['formations'] ?? [];
 
         return array_map(
-            fn (array $formation): \Amphibee\MariusApi\DTO\FormationDTO => FormationDTO::fromArray($formation),
+            fn (array $formation): FormationDTO => FormationDTO::fromArray($formation),
             $data
         );
     }

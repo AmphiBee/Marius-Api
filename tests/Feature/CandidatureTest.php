@@ -2,13 +2,17 @@
 
 use Amphibee\MariusApi\DTO\CandidatureDTO;
 use Amphibee\MariusApi\Services\CandidatureService;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
+use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 beforeEach(function (): void {
     $this->service = app(CandidatureService::class);
 });
 
-it('can submit candidature', function (): void {
+it(/**
+ * @throws UnknownProperties
+ */ 'can submit candidature', function (): void {
     // Arrange
     Http::fake([
         '*/candidature' => Http::response([
@@ -35,7 +39,7 @@ it('can submit candidature', function (): void {
         ->toHaveKey('id_candidature')
         ->and($response['id_candidature'])->toBe('123');
 
-    Http::assertSent(fn (\Illuminate\Http\Client\Request $request): bool => $request->url() === config('marius.base_url').'/candidature' &&
+    Http::assertSent(fn (Request $request): bool => $request->url() === config('marius.base_url').'/candidature' &&
         $request->method() === 'POST' &&
         $request['civilite'] === 'Monsieur' &&
         $request['nom'] === 'Doe');

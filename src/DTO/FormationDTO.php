@@ -4,14 +4,25 @@ namespace Amphibee\MariusApi\DTO;
 
 use Spatie\DataTransferObject\DataTransferObject;
 
+/**
+ * Data Transfer Object for Formation information.
+ */
 class FormationDTO extends DataTransferObject
 {
+    /** @var string Formation unique identifier */
     public string $id_formation;
 
+    /** @var string Formation name */
     public string $nom_formation;
 
+    /** @var string Formation level */
     public string $niveau_sortie;
 
+    /**
+     * Create a new FormationDTO instance from array data.
+     *
+     * @param  array{id_formation: string, nom_formation: string, niveau_sortie: string}  $data
+     */
     public static function fromArray(array $data): self
     {
         return new self([
