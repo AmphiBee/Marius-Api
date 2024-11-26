@@ -1,0 +1,58 @@
+{
+  "name": "amphibee/marius-api",
+  "description": "Laravel package for Marius API integration",
+  "type": "library",
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^9.0|^10.0",
+    "spatie/data-transfer-object": "^3.0",
+    "guzzlehttp/guzzle": "^7.9"
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.0",
+    "orchestra/testbench": "^8.0",
+    "rector/rector": "^1.2",
+    "laravel/pint": "^1.18"
+  },
+  "autoload": {
+    "psr-4": {
+      "Amphibee\\MariusApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Amphibee\\MariusApi\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Amphibee\\MariusApi\\Providers\\MariusServiceProvider"
+      ],
+      "aliases": {
+        "MariusCampus": "Amphibee\\MariusApi\\Facades\\Campus",
+        "MariusFormation": "Amphibee\\MariusApi\\Facades\\Formation",
+        "MariusCandidature": "Amphibee\\MariusApi\\Facades\\Candidature"
+      }
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "refacto": "rector",
+    "lint": "pint",
+    "test:refacto": "rector --dry-run",
+    "test:lint": "pint --test",
+    "test:types": "phpstan analyse --ansi",
+    "test:unit": "pest --colors=always --coverage --parallel --min=100",
+    "test": [
+      "@test:refacto",
+      "@test:lint",
+      "@test:types",
+      "@test:unit"
+    ]
+  }
+}
