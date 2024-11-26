@@ -1,7 +1,7 @@
 <?php
 
-use Amphibee\MariusApi\DTO\CandidatureDTO;
-use Amphibee\MariusApi\Services\CandidatureService;
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
+use AmphiBee\MariusApi\Services\CandidatureService;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 use Spatie\DataTransferObject\Exceptions\UnknownProperties;
@@ -61,4 +61,4 @@ it('throws exception when candidature submission fails', function (): void {
     ]);
 
     $this->service->submit($candidature);
-})->throws(\Amphibee\MariusApi\Exceptions\MariusApiException::class);
+})->throws(\AmphiBee\MariusApi\Exceptions\MariusApiException::class);

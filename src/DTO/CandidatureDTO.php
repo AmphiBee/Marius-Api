@@ -1,6 +1,6 @@
 <?php
 
-namespace Amphibee\MariusApi\DTO;
+namespace AmphiBee\MariusApi\DTO;
 
 use Spatie\DataTransferObject\DataTransferObject;
 

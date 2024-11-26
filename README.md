@@ -54,10 +54,10 @@ MARIUS_API_TIMEOUT=10
 First, import the Facades you need:
 
 ```php
-use Amphibee\MariusApi\Facades\Campus;
-use Amphibee\MariusApi\Facades\Formation;
-use Amphibee\MariusApi\Facades\Candidature;
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Facades\Campus;
+use AmphiBee\MariusApi\Facades\Formation;
+use AmphiBee\MariusApi\Facades\Candidature;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 ```
 
 ### Campus
@@ -109,7 +109,7 @@ try {
 Submit and manage student applications:
 
 ```php
-use Amphibee\MariusApi\DTO\CandidatureDTO;
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
 
 try {
     $application = new CandidatureDTO([
@@ -137,11 +137,11 @@ Here's a complete example of using the Facades in a Laravel controller:
 ```php
 namespace App\Http\Controllers;
 
-use Amphibee\MariusApi\DTO\CandidatureDTO;
-use Amphibee\MariusApi\Exceptions\MariusApiException;
-use Amphibee\MariusApi\Facades\Campus as Campus;
-use Amphibee\MariusApi\Facades\Formation as Formation;
-use Amphibee\MariusApi\Facades\Candidature as Candidature;
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Facades\Campus as Campus;
+use AmphiBee\MariusApi\Facades\Formation as Formation;
+use AmphiBee\MariusApi\Facades\Candidature as Candidature;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -192,9 +192,9 @@ class ApplicationController extends Controller
 The package includes a comprehensive test suite. When testing your own application, you can mock the Facades:
 
 ```php
-use Amphibee\MariusApi\Facades\Campus;
-use Amphibee\MariusApi\Facades\Formation;
-use Amphibee\MariusApi\Facades\Candidature;
+use AmphiBee\MariusApi\Facades\Campus;
+use AmphiBee\MariusApi\Facades\Formation;
+use AmphiBee\MariusApi\Facades\Candidature;
 
 it('can list all campuses', function () {
     // Arrange
@@ -233,7 +233,7 @@ it('can get formations for campus', function () {
 All Facade methods can throw `MariusApiException`. It's recommended to wrap calls in try-catch blocks:
 
 ```php
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 
 try {
     $campuses = Campus::getCampuses();
@@ -251,7 +251,7 @@ try {
 The package uses Data Transfer Objects (DTOs) to ensure type safety and validation:
 
 ```php
-use Amphibee\MariusApi\DTO\CandidatureDTO;
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
 
 // Create from array
 $application = new CandidatureDTO([
@@ -284,7 +284,7 @@ The package includes a comprehensive test suite using Pest. To run the tests:
 The package uses a custom `MariusApiException` for error handling. All methods can throw this exception in case of API errors.
 
 ```php
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 
 try {
     $campuses = $campusService->getCampuses();
@@ -324,9 +324,9 @@ composer fix-style
 
 This package is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
 
-## 🏢 About Amphibee
+## 🏢 About AmphiBee
 
-Developed and maintained by [Amphibee](https://amphibee.fr). For more information about our services or other open-source projects, please visit our website.
+Developed and maintained by [AmphiBee](https://amphibee.fr). For more information about our services or other open-source projects, please visit our website.
 
 ## 🔒 Security
 

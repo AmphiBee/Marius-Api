@@ -1,7 +1,7 @@
 <?php
 
-use Amphibee\MariusApi\DTO\FormationDTO;
-use Amphibee\MariusApi\Services\FormationService;
+use AmphiBee\MariusApi\DTO\FormationDTO;
+use AmphiBee\MariusApi\Services\FormationService;
 use Illuminate\Support\Facades\Http;
 
 beforeEach(function (): void {

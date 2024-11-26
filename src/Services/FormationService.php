@@ -1,9 +1,9 @@
 <?php
 
-namespace Amphibee\MariusApi\Services;
+namespace AmphiBee\MariusApi\Services;
 
-use Amphibee\MariusApi\DTO\FormationDTO;
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\DTO\FormationDTO;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 
 /**
  * Service for managing formation data.

@@ -1,10 +1,10 @@
 <?php
 
-namespace Amphibee\MariusApi\Facades;
+namespace AmphiBee\MariusApi\Facades;
 
-use Amphibee\MariusApi\DTO\CampusDTO;
-use Amphibee\MariusApi\Exceptions\MariusApiException;
-use Amphibee\MariusApi\Services\CampusService;
+use AmphiBee\MariusApi\DTO\CampusDTO;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Services\CampusService;
 use Illuminate\Support\Facades\Facade;
 
 /**

@@ -17,23 +17,23 @@
   },
   "autoload": {
     "psr-4": {
-      "Amphibee\\MariusApi\\": "src/"
+      "AmphiBee\\MariusApi\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Amphibee\\MariusApi\\Tests\\": "tests/"
+      "AmphiBee\\MariusApi\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Amphibee\\MariusApi\\Providers\\MariusServiceProvider"
+        "AmphiBee\\MariusApi\\Providers\\MariusServiceProvider"
       ],
       "aliases": {
-        "MariusCampus": "Amphibee\\MariusApi\\Facades\\Campus",
-        "MariusFormation": "Amphibee\\MariusApi\\Facades\\Formation",
-        "MariusCandidature": "Amphibee\\MariusApi\\Facades\\Candidature"
+        "MariusCampus": "AmphiBee\\MariusApi\\Facades\\Campus",
+        "MariusFormation": "AmphiBee\\MariusApi\\Facades\\Formation",
+        "MariusCandidature": "AmphiBee\\MariusApi\\Facades\\Candidature"
       }
     }
   },

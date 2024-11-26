@@ -1,8 +1,8 @@
 <?php
 
-namespace Amphibee\MariusApi\Tests;
+namespace AmphiBee\MariusApi\Tests;
 
-use Amphibee\MariusApi\Providers\MariusServiceProvider;
+use AmphiBee\MariusApi\Providers\MariusServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra

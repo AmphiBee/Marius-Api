@@ -1,8 +1,8 @@
 <?php
 
-use Amphibee\MariusApi\DTO\CampusDTO;
-use Amphibee\MariusApi\DTO\CandidatureDTO;
-use Amphibee\MariusApi\DTO\FormationDTO;
+use AmphiBee\MariusApi\DTO\CampusDTO;
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
+use AmphiBee\MariusApi\DTO\FormationDTO;
 
 it('can create campus DTO from array', function (): void {
     $data = [

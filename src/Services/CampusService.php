@@ -1,9 +1,9 @@
 <?php
 
-namespace Amphibee\MariusApi\Services;
+namespace AmphiBee\MariusApi\Services;
 
-use Amphibee\MariusApi\DTO\CampusDTO;
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\DTO\CampusDTO;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 
 /**
  * Service for managing campus data.
@@ -23,7 +23,7 @@ class CampusService extends AbstractApiService
         $data = $response->json()['campus'];
 
         return array_map(
-            fn (array $campus): \Amphibee\MariusApi\DTO\CampusDTO => CampusDTO::fromArray($campus),
+            fn (array $campus): \AmphiBee\MariusApi\DTO\CampusDTO => CampusDTO::fromArray($campus),
             $data
         );
     }

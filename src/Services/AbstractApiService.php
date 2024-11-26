@@ -1,8 +1,8 @@
 <?php
 
-namespace Amphibee\MariusApi\Services;
+namespace AmphiBee\MariusApi\Services;
 
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 

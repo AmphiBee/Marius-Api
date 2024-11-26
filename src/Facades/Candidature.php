@@ -1,9 +1,9 @@
 <?php
 
-namespace Amphibee\MariusApi\Facades;
+namespace AmphiBee\MariusApi\Facades;
 
-use Amphibee\MariusApi\Exceptions\MariusApiException;
-use Amphibee\MariusApi\Services\CandidatureService;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\Services\CandidatureService;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @throws MariusApiException When API request fails
  *
- * @see \Amphibee\MariusApi\Services\CandidatureService
+ * @see \AmphiBee\MariusApi\Services\CandidatureService
  */
 class Candidature extends Facade
 {

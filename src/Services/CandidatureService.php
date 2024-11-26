@@ -1,9 +1,9 @@
 <?php
 
-namespace Amphibee\MariusApi\Services;
+namespace AmphiBee\MariusApi\Services;
 
-use Amphibee\MariusApi\DTO\CandidatureDTO;
-use Amphibee\MariusApi\Exceptions\MariusApiException;
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
+use AmphiBee\MariusApi\Exceptions\MariusApiException;
 
 /**
  * Service for managing application submissions.

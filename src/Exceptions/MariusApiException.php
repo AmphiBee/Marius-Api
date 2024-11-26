@@ -1,6 +1,6 @@
 <?php
 
-namespace Amphibee\MariusApi\Exceptions;
+namespace AmphiBee\MariusApi\Exceptions;
 
 use Exception;
 
