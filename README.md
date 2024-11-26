@@ -4,16 +4,16 @@ A Laravel package for easy interaction with the Marius Application API.
 
 ## 📋 Table of Contents
 
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
+- [Installation](#-installation)
+- [Configuration](#️-configuration)
+- [Usage](#-usage)
     - [Campus](#campus)
     - [Courses](#courses)
     - [Applications](#applications)
-- [Testing](#testing)
-- [Error Handling](#error-handling)
-- [Contributing](#contributing)
-- [License](#license)
+- [Testing](#-testing)
+- [Error Handling](#-error-handling)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## 🚀 Installation
 
