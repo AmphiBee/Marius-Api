@@ -2,6 +2,7 @@
   "name": "amphibee/marius-api",
   "description": "Laravel package for Marius API integration",
   "type": "library",
+  "license": "MIT",
   "require": {
     "php": "^8.2",
     "illuminate/support": "^9.0|^10.0",
