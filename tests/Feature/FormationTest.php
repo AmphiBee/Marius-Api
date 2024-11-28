@@ -21,11 +21,13 @@ it('can fetch formations by campus', function (): void {
                             'id_formation' => '30',
                             'nom_formation' => 'Bachelor Communication',
                             'niveau_sortie' => 'Bac+3',
+                            'annee' => '1ère Année',
                         ],
                         [
                             'id_formation' => '31',
                             'nom_formation' => 'Master Communication',
                             'niveau_sortie' => 'Bac+5',
+                            'annee' => '2ème Année',
                         ],
                     ],
                 ],
@@ -44,7 +46,8 @@ it('can fetch formations by campus', function (): void {
         ->toBeInstanceOf(FormationDTO::class)
         ->and($formations[0]->id_formation)->toBe('30')
         ->and($formations[0]->nom_formation)->toBe('Bachelor Communication')
-        ->and($formations[0]->niveau_sortie)->toBe('Bac+3');
+        ->and($formations[0]->niveau_sortie)->toBe('Bac+3')
+        ->and($formations[0]->annee)->toBe('1ère Année');
 });
 
 it('returns empty array when campus not found', function (): void {

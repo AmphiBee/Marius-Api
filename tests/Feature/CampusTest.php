@@ -22,6 +22,7 @@ it('can fetch campuses from API', function (): void {
                             'id_formation' => '30',
                             'nom_formation' => 'Bachelor Communication',
                             'niveau_sortie' => 'Bac+3',
+                            'annee' => '1ère Année',
                         ],
                     ],
                 ],
