@@ -42,8 +42,7 @@ abstract class AbstractApiService
     protected function makeRequest(string $method, string $endpoint, array $data = []): Response
     {
         $response = Http::timeout($this->timeout)
-            ->withToken($this->apiKey)
-            ->{strtolower($method)}("{$this->baseUrl}/{$endpoint}", $data);
+            ->{strtolower($method)}("{$this->baseUrl}/{$this->apiKey}/{$endpoint}", $data);
 
         if ($response->failed()) {
             throw new MariusApiException(

@@ -29,6 +29,7 @@ class FormationDTO extends DataTransferObject
             'id_formation' => $data['id_formation'],
             'nom_formation' => $data['nom_formation'],
             'niveau_sortie' => $data['niveau_sortie'],
+            'annee' => $data['annee'],
         ]);
     }
 }
