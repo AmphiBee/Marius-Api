@@ -13,6 +13,7 @@ it('can create campus DTO from array', function (): void {
                 'id_formation' => '30',
                 'nom_formation' => 'Bachelor Communication',
                 'niveau_sortie' => 'Bac+3',
+                'annee' => '1ère Année',
             ],
         ],
     ];
@@ -32,6 +33,7 @@ it('can create formation DTO from array', function (): void {
         'id_formation' => '30',
         'nom_formation' => 'Bachelor Communication',
         'niveau_sortie' => 'Bac+3',
+        'annee' => '1ère Année',
     ];
 
     $formation = FormationDTO::fromArray($data);
@@ -40,7 +42,8 @@ it('can create formation DTO from array', function (): void {
         ->toBeInstanceOf(FormationDTO::class)
         ->and($formation->id_formation)->toBe('30')
         ->and($formation->nom_formation)->toBe('Bachelor Communication')
-        ->and($formation->niveau_sortie)->toBe('Bac+3');
+        ->and($formation->niveau_sortie)->toBe('Bac+3')
+        ->and($formation->annee)->toBe('1ère Année');
 });
 
 it('can create candidature DTO from array', function (): void {

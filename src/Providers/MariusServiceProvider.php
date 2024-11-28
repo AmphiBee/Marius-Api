@@ -5,7 +5,6 @@ namespace AmphiBee\MariusApi\Providers;
 use AmphiBee\MariusApi\Services\CampusService;
 use AmphiBee\MariusApi\Services\CandidatureService;
 use AmphiBee\MariusApi\Services\FormationService;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -22,11 +21,11 @@ class MariusServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../../config/marius.php', 'marius');
 
         // Register services as singletons
-        $this->app->singleton(CampusService::class, fn (Application $app): \AmphiBee\MariusApi\Services\CampusService => new CampusService($app['config']['marius']));
+        $this->app->singleton(CampusService::class, fn ($app): \AmphiBee\MariusApi\Services\CampusService => new CampusService($app['config']['marius']));
 
-        $this->app->singleton(FormationService::class, fn (Application $app): \AmphiBee\MariusApi\Services\FormationService => new FormationService($app['config']['marius']));
+        $this->app->singleton(FormationService::class, fn ($app): \AmphiBee\MariusApi\Services\FormationService => new FormationService($app['config']['marius']));
 
-        $this->app->singleton(CandidatureService::class, fn (Application $app): \AmphiBee\MariusApi\Services\CandidatureService => new CandidatureService($app['config']['marius']));
+        $this->app->singleton(CandidatureService::class, fn ($app): \AmphiBee\MariusApi\Services\CandidatureService => new CandidatureService($app['config']['marius']));
     }
 
     /**

@@ -18,10 +18,13 @@ class FormationDTO extends DataTransferObject
     /** @var string Formation level */
     public string $niveau_sortie;
 
+    /** @var string Formation year */
+    public string $annee;
+
     /**
      * Create a new FormationDTO instance from array data.
      *
-     * @param  array{id_formation: string, nom_formation: string, niveau_sortie: string}  $data
+     * @param  array{id_formation: string, nom_formation: string, niveau_sortie: string, annee: string}  $data
      */
     public static function fromArray(array $data): self
     {
@@ -29,6 +32,7 @@ class FormationDTO extends DataTransferObject
             'id_formation' => $data['id_formation'],
             'nom_formation' => $data['nom_formation'],
             'niveau_sortie' => $data['niveau_sortie'],
+            'annee' => $data['annee'],
         ]);
     }
 }
