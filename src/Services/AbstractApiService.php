@@ -41,7 +41,8 @@ abstract class AbstractApiService
      */
     protected function makeRequest(string $method, string $endpoint, array $data = []): Response
     {
-        $response = Http::timeout($this->timeout)
+        $response = Http::asForm()
+            ->timeout($this->timeout)
             ->{strtolower($method)}("{$this->baseUrl}/{$this->apiKey}/{$endpoint}", $data);
 
         if ($response->failed()) {
