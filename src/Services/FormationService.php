@@ -11,6 +11,8 @@ use AmphiBee\MariusApi\Exceptions\MariusApiException;
  */
 class FormationService extends AbstractApiService
 {
+    private mixed $rawResponse = null;
+
     /**
      * Get all formations available for a specific campus.
      *
@@ -22,11 +24,22 @@ class FormationService extends AbstractApiService
     public function getFormationsByCampus(string $campusId): array
     {
         $response = $this->makeRequest('GET', 'formations');
-        $data = $response->json()['campus'][$campusId]['formations'] ?? [];
+        $this->rawResponse = $response->json();
+        $data = $this->rawResponse['campus'][$campusId]['formations'] ?? [];
 
         return array_map(
             fn (array $formation): FormationDTO => FormationDTO::fromArray($formation),
             $data
         );
+    }
+
+    /**
+     * Retourne la dernière réponse brute de l'API.
+     *
+     * @return mixed La réponse brute de la dernière requête ou null si aucune requête n'a été effectuée
+     */
+    public function getRawResponse(): mixed
+    {
+        return $this->rawResponse;
     }
 }

@@ -10,6 +10,8 @@ use AmphiBee\MariusApi\Exceptions\MariusApiException;
  */
 class CandidatureService extends AbstractApiService
 {
+    private mixed $rawResponse = null;
+
     /**
      * Submit a new application.
      *
@@ -21,7 +23,18 @@ class CandidatureService extends AbstractApiService
     public function submit(CandidatureDTO $candidature): array
     {
         $response = $this->makeRequest('POST', 'candidature', $candidature->toArray());
+        $this->rawResponse = $response->json();
 
-        return $response->json();
+        return $this->rawResponse;
+    }
+
+    /**
+     * Retourne la dernière réponse brute de l'API.
+     *
+     * @return mixed La réponse brute de la dernière requête ou null si aucune requête n'a été effectuée
+     */
+    public function getRawResponse(): mixed
+    {
+        return $this->rawResponse;
     }
 }
