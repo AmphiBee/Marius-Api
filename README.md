@@ -271,6 +271,57 @@ $application = new CandidatureDTO($request->validated());
 $response = Candidature::submit($application);
 ```
 
+### Logging API Responses
+
+The package includes built-in logging capabilities for debugging purposes. Each service provides a `getRawResponse()` method that returns the raw API response:
+
+```php
+use AmphiBee\MariusApi\DTO\CandidatureDTO;
+use Illuminate\Support\Facades\Log;
+
+try {
+    $application = new CandidatureDTO([
+        'civilite' => 'Mr',
+        'nom' => 'Doe',
+        // ... autres données
+    ]);
+    
+    $response = Candidature::submit($application);
+    
+    // Log the raw response
+    Log::channel('api')->info('Marius API Response', [
+        'response' => Candidature::getRawResponse()
+    ]);
+    
+} catch (MariusApiException $e) {
+    Log::channel('api')->error('Marius API Error', [
+        'message' => $e->getMessage(),
+        'trace' => $e->getTraceAsString()
+    ]);
+}
+```
+
+To enable API logging, add this to your `config/logging.php`:
+
+```php
+'channels' => [
+    // ... autres canaux
+    
+    'api' => [
+        'driver' => 'daily',
+        'path' => storage_path('logs/api.log'),
+        'level' => env('LOG_LEVEL', 'debug'),
+        'days' => 14,
+    ],
+],
+```
+
+The logs will be stored in `storage/logs/api.log` with this format:
+```log
+[2024-03-14 10:30:00] local.INFO: Marius API - Données d'entrée {"data":{"civilite":"Mr","nom":"Doe",...}}
+[2024-03-14 10:30:01] local.INFO: Marius API - Réponse {"response":{"id_candidature":"123",...}}
+```
+
 ## 🧪 Testing
 
 The package includes a comprehensive test suite using Pest. To run the tests:
