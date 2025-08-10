@@ -10,7 +10,7 @@
     "guzzlehttp/guzzle": "^7.9"
   },
   "require-dev": {
-    "pestphp/pest": "^2.0",
+    "pestphp/pest": "^3.0",
     "orchestra/testbench": "^8.0",
     "rector/rector": "^1.2",
     "laravel/pint": "^1.18"
