@@ -17,9 +17,6 @@ abstract class AbstractApiService
     /** @var string API authentication key */
     protected string $apiKey;
 
-    /** @var int Request timeout in seconds */
-    protected int $timeout;
-
     /**
      * @param  array{base_url: string, api_key: string, timeout: int}  $config
      */
@@ -27,7 +24,6 @@ abstract class AbstractApiService
     {
         $this->baseUrl = $config['base_url'];
         $this->apiKey = $config['api_key'];
-        $this->timeout = $config['timeout'];
     }
 
     /**
@@ -42,14 +38,7 @@ abstract class AbstractApiService
     protected function makeRequest(string $method, string $endpoint, array $data = []): Response
     {
         $response = Http::asForm()
-            ->timeout($this->timeout)
             ->{strtolower($method)}("{$this->baseUrl}/{$this->apiKey}/{$endpoint}", $data);
-
-        if ($response->failed()) {
-            throw new MariusApiException(
-                "L'appel API a échoué : {$response->status()} - {$response->body()}"
-            );
-        }
 
         return $response;
     }
