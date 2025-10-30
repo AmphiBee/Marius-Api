@@ -23,8 +23,9 @@ class CandidatureService extends AbstractApiService
     public function submit(CandidatureDTO $candidature): array
     {
         $response = $this->makeRequest('POST', 'candidature', $candidature->toArray());
+        $json = $response->json();
 
-        return array_merge(['code' => $response->status()], $response->json());
+        return array_merge(['code' => $response->status()], is_array($json) ? $json : [$json]);
     }
 
     /**
